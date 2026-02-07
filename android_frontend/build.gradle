@@ -1,0 +1,13 @@
+/**
+ * Top-level build file where you can add configuration options common to all sub-projects/modules.
+ *
+ * We keep plugins declared here so modules can apply them without repeating versions.
+ */
+plugins {
+    id "com.android.application" version "8.6.1" apply false
+    id "com.android.library" version "8.6.1" apply false
+    id "org.jetbrains.kotlin.android" version "2.0.21" apply false
+
+    // Required starting with Kotlin 2.0 when compose is enabled in android { buildFeatures { compose true } }.
+    id "org.jetbrains.kotlin.plugin.compose" version "2.0.21" apply false
+}
