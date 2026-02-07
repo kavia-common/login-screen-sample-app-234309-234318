@@ -1,12 +1,107 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".MainActivity">
-    <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FAFB"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Simple "card" container to fit the Ocean Professional (clean, subtle shadow) feel without new deps -->
+    <LinearLayout
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="6dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
-</RelativeLayout>
+            android:layout_marginBottom="16dp"
+            android:text="Sign in"
+            android:textColor="#111827"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/emailLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:text="Email"
+            android:textColor="#111827"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
+            android:backgroundTint="#2563EB"
+            android:hint="you@example.com"
+            android:importantForAutofill="yes"
+            android:inputType="textEmailAddress"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="#111827"
+            android:textColorHint="#6B7280" />
+
+        <TextView
+            android:id="@+id/passwordLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="6dp"
+            android:text="Password"
+            android:textColor="#111827"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="password"
+            android:backgroundTint="#2563EB"
+            android:hint="••••••"
+            android:importantForAutofill="yes"
+            android:inputType="textPassword"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="#111827"
+            android:textColorHint="#6B7280" />
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:backgroundTint="#2563EB"
+            android:minHeight="48dp"
+            android:text="Log in"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+        <!-- Status/error/success area -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:textColor="#6B7280"
+            android:textSize="14sp" />
+
+        <!-- Small helper / hint to make the simulated auth discoverable -->
+        <TextView
+            android:id="@+id/hintText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Demo login: email must end with @example.com and password length ≥ 6."
+            android:textColor="#6B7280"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>
